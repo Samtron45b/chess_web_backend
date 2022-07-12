@@ -1,11 +1,11 @@
-import LayoutApp from "./components/Layout";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <LayoutApp>
-      <p className='text-green-500'>
-      </p>
-    </LayoutApp>
+    <p className='text-green-500'>
+      Hi
+    </p>
   );
 }
 
