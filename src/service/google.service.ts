@@ -6,21 +6,21 @@ const REFRESH_TOKEN = process.env.google_refresh_token
 const REDIRECT_URL = process.env.google_redirect_uri
 
 class googleService{
-    config(){
-        const oauth2Client = new google.auth.OAuth2(
-            CLIENT_ID,
-            CLIENT_SECRET,
-            REDIRECT_URL
-          );
-        
-        oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+  config(){
+    const oauth2Client = new google.auth.OAuth2(
+        CLIENT_ID,
+        CLIENT_SECRET,
+        REDIRECT_URL
+      );
     
-         const drive = google.drive({
-            version: 'v3',
-            auth: oauth2Client,
-          });
-        return drive
-    }
+    oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+      const drive = google.drive({
+        version: 'v3',
+        auth: oauth2Client,
+      });
+    return drive
+  }
 }
 
 

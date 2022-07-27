@@ -9,7 +9,7 @@ const app = express();
 app.use(
     cors(
         {
-            origin: [process.env.Domain_Fe, "https://wnc-fe-admin.herokuapp.com"]
+            origin: [process.env.Domain_Fe]
         }
     )
 )
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}));
 
 const port = process.env.PORT || 3000;
 
-db();
+// db();
 
 app.listen(port, ()=>{console.log(`Server listen at ${port}`)})
 
