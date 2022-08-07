@@ -1913,3 +1913,6 @@ var Chess = function(fen) {
     define(function() {
       return Chess
     })
+
+
+export default Chess

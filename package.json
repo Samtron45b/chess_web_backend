@@ -1,0 +1,29 @@
+{
+  "name": "chess-ai",
+  "version": "1.0.0",
+  "description": "A chess engine by someone who doesn't know how to play chess.",
+  "main": "index.js",
+  "dependencies": {
+    "chess": "^1.0.2",
+    "chess.js": "^0.13.4",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "socket.io": "^4.5.1"
+  },
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeyu2001/chess-ai.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeyu2001/chess-ai/issues"
+  },
+  "homepage": "https://github.com/zeyu2001/chess-ai#readme"
+}

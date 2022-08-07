@@ -394,9 +394,11 @@ function makeBestMove(color) {
     var move = getBestMove(game, color, -globalSum)[0];
   }
 
+
   globalSum = evaluateBoard(game, move, globalSum, 'b');
   updateAdvantage();
 
+  console.log('move', Object.values(move));
   game.move(move);
   board.position(game.fen());
 
@@ -610,6 +612,7 @@ function onDrop(source, target) {
   removeGreySquares();
 
   // see if the move is legal
+  console.log("source", source, 'target', target);
   var move = game.move({
     from: source,
     to: target,
