@@ -115,7 +115,6 @@ class ChessService {
   }
 
   checkStatus(game) {
-    console.log("game", game);
     if (game.in_checkmate()) {
     } else if (game.insufficient_material()) {
     } else if (game.in_threefold_repetition()) {

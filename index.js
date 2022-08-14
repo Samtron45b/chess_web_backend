@@ -3,7 +3,8 @@ import { createServer } from "http";
 import { Server, Socket } from "socket.io";
 import chessService from "./src/services/chess.service.js";
 import Chess from './js/chess.js';
-
+import db from "./src/db.js";
+import route from './src/routes/index.js';
 
 const app = express();
 
@@ -28,14 +29,18 @@ io.on("connection", async (socket) => {
         chessService.white_move(game, source, destination);
         // chose black best move
 
-        console.log("white mote", game.ascii());
-        const black_move = chessService.black_move(game);
+        const black_move = chessService.black_move(game);        socket.emit("black-moved", black_move);
+   })
 
-        console.log("black mote", game.ascii());
-        socket.emit("black-moved", black_move);
+    socket.on("check_status", function () {
+        const status = chessService.checkStatus(game);
+        socket.emit("end_game", {status: status, game: game});
     })
-
     socket.emit("greeting", "hello from the server")
 })
 
+db();
+
 httpServer.listen(port, ()=>{console.log(`Server listen at ${port}`)})
+
+route(app)
